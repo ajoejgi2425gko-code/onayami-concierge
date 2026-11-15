@@ -1,4 +1,4 @@
-const CACHE='onayami-concierge-v20-20261115';
+const CACHE='onayami-concierge-v25-20261115';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./character-01.webp','./character-02.webp','./character-03.webp','./character-04.webp','./character-05.webp','./character-06.webp','./character-07.webp','./character-08.webp','./character-09.webp','./character-10.webp','./character-11.webp','./character-12.webp','./character-13.webp','./character-14.webp','./character-15.webp','./character-16.webp','./character-17.webp','./character-18.webp','./character-19.webp','./character-20.webp','./character-21.webp','./character-22.webp','./character-23.webp','./character-24.webp'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
